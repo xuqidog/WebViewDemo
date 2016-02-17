@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>hello World</title>
+</head>
+<script type="text/javascript">
+function sendCommand(type,cmd,param){
+    var url=type+":"+cmd+":"+param;
+    document.location = url;
+}
+</script>
+<style type="text/css">
+tr
+{
+    text-align: center;
+    background-color:white;
+}
+*{
+    padding:0px;
+    margin:0px;
+}
+</style>
+<body style="background-color: transparent">
+    <div id = "testDiv" style = "margin-top:200px">
+        测试内容显示区
+    </div>
+    <input type="button" value="JS->APP" onclick = "sendCommand('testapp','alert','JS send Message to App');"/>
+    <input type="button" value="反回上一页" onclick = "sendCommand('goback','alert','H5 send Message to App');"/>
+</body>
+</html>
+<script type="text/javascript">
+function getMessageFromApp(message){
+    var testDiv = document.getElementById("testDiv");
+    testDiv.innerText = message;
+}
+//getMessageFromApp("test");
+</script>
